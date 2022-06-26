@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kannadasapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kannadasapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: kannadasapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: kannadasapipelinesjavascriptdocker 
+          image: aksregistry01kanna.azurecr.io/kannadasapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
